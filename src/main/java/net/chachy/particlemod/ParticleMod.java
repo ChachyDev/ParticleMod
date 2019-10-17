@@ -57,7 +57,7 @@ public class ParticleMod implements IAddon {
         ParticleHandlers.getHandlers().registerHandler(new ParticleHandler());
         ParticleHandlers.getHandlers().registerHandler(new UpdateHandler());
         LOGGER.info("Registered Config, Handlers and Command!");
-        EventBus.INSTANCE.register(this);;
+        EventBus.INSTANCE.register(this);
     }
 
     @Override
