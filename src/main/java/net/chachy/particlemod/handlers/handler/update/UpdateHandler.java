@@ -12,7 +12,7 @@ import net.minecraft.client.Minecraft;
 
 public class UpdateHandler implements Handler {
     /**
-     * Class used for handling if they're on the latest version.
+     * Class used for handling update checks.
      */
 
     @Override
