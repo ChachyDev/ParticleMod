@@ -14,11 +14,13 @@ public class ChachyMod {
 
     public final boolean isLatestVersion(String mod, String version) {
         if (DevUtils.INSTANCE.isMinecraftDevelopmentEnvironment()) return true;
+        if (getVersion(mod) == null) return true;
         return Objects.requireNonNull(getVersion(mod)).equalsIgnoreCase(version);
     }
 
     public final boolean isLatestVersion(Mod mod, String version) {
         if (DevUtils.INSTANCE.isMinecraftDevelopmentEnvironment()) return true;
+        if (getVersion(mod) == null) return true;
         return Objects.requireNonNull(getVersion(mod)).equalsIgnoreCase(version);
     }
 

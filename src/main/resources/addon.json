@@ -2,5 +2,4 @@
   "name":"Particle Addon",
   "version":"1.0",
   "mainClass":"net.chachy.particlemod.ParticleMod",
-  "versionCode": "1.0"
 }
