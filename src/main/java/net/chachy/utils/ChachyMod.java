@@ -15,12 +15,12 @@ public class ChachyMod {
 
     public final boolean isLatestVersion(String mod, String version) {
         if (DevUtils.INSTANCE.isMinecraftDevelopmentEnvironment()) return true;
-        return Objects.requireNonNull(getVersion(mod)).equalsIgnoreCase(version);
+        return (Integer.parseInt(getVersion(mod)) < Integer.parseInt(version)) || getVersion(mod).equalsIgnoreCase(ParticleMod.INSTANCE.VERSION);
     }
 
     public final boolean isLatestVersion(Mod mod, String version) {
         if (DevUtils.INSTANCE.isMinecraftDevelopmentEnvironment()) return true;
-        return Objects.requireNonNull(getVersion(mod)).equalsIgnoreCase(version);
+        return (Integer.parseInt(getVersion(mod)) < Integer.parseInt(version)) || getVersion(mod).equalsIgnoreCase(ParticleMod.INSTANCE.VERSION);
     }
 
 
@@ -39,7 +39,8 @@ public class ChachyMod {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return ParticleMod.INSTANCE.VERSION;    }
+        return ParticleMod.INSTANCE.VERSION;
+    }
 
     private String getVersion(String mod) {
         try {
