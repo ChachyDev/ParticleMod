@@ -53,9 +53,7 @@ public class ChachyMod {
     }
 
     public void setApiUrl(String url) {
-        if (url.contains("/")) {
-            url = url.replace("/", "");
-        }
+        if (url.contains("/")) url = url.replace("/", "");
         this.API_URL = url;
     }
 }

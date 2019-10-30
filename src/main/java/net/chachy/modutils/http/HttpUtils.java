@@ -17,7 +17,10 @@ public class HttpUtils {
         InputStreamReader isr = new InputStreamReader(is);
         BufferedReader br = new BufferedReader(isr);
         String out = br.lines().collect(Collectors.joining());
+        is.close();
+        isr.close();
         br.close();
+        conn.disconnect();
         return out;
     }
 
