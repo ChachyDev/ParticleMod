@@ -4,7 +4,7 @@ import cc.hyperium.Hyperium;
 import cc.hyperium.event.EntityJoinWorldEvent;
 import cc.hyperium.event.InvokeEvent;
 import cc.hyperium.event.ServerJoinEvent;
-import net.chachy.modutils.ChachyMod;
+import net.chachy.utils.ChachyMod;
 import net.chachy.particlemod.ParticleMod;
 import net.chachy.particlemod.config.Configuration;
 import net.chachy.particlemod.handlers.utils.Handler;

@@ -1,4 +1,4 @@
-package net.chachy.modutils.utils;
+package net.chachy.utils.utils;
 
 public class DevUtils {
     public static DevUtils INSTANCE = new DevUtils();

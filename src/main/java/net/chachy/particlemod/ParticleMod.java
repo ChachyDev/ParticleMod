@@ -5,7 +5,7 @@ import cc.hyperium.event.EventBus;
 import cc.hyperium.event.InitializationEvent;
 import cc.hyperium.event.InvokeEvent;
 import cc.hyperium.internal.addons.IAddon;
-import net.chachy.modutils.utils.DevUtils;
+import net.chachy.utils.utils.DevUtils;
 import net.chachy.particlemod.command.ParticleGuiCommand;
 import net.chachy.particlemod.config.Configuration;
 import net.chachy.particlemod.handlers.ParticleHandlers;

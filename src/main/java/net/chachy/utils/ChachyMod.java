@@ -1,9 +1,9 @@
-package net.chachy.modutils;
+package net.chachy.utils;
 
 import com.google.gson.JsonParser;
-import net.chachy.modutils.http.HttpUtils;
-import net.chachy.modutils.utils.DevUtils;
-import net.chachy.modutils.utils.Mod;
+import net.chachy.utils.http.HttpUtils;
+import net.chachy.utils.utils.DevUtils;
+import net.chachy.utils.utils.Mod;
 import net.chachy.particlemod.ParticleMod;
 
 import java.io.IOException;
@@ -41,7 +41,7 @@ public class ChachyMod {
         }
         return ParticleMod.INSTANCE.VERSION;    }
 
-    public final String getVersion(String mod) {
+    private String getVersion(String mod) {
         try {
             return new JsonParser().parse(HttpUtils.get("https://api.chachy.co.uk/get/mod/" + mod)).getAsJsonObject().get("version").getAsString();
         } catch (IOException e) {

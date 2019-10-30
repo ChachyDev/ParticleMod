@@ -1,4 +1,6 @@
-package net.chachy.modutils.http;
+package net.chachy.utils.http;
+
+import net.chachy.particlemod.ParticleMod;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
@@ -12,7 +14,7 @@ public class HttpUtils {
     public static String get(String url) throws IOException {
         URL u = new URL(url);
         HttpsURLConnection conn = (HttpsURLConnection)u.openConnection();
-        conn.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 5.1; rv:19.0) Gecko/20100101 Firefox/19.0");
+        conn.addRequestProperty("User-Agent", "ParticleMod " + ParticleMod.INSTANCE.VERSION + " Mozilla/5.0 (Windows NT 5.1; rv:19.0) Gecko/20100101 Firefox/19.0");
         InputStream is = conn.getInputStream();
         InputStreamReader isr = new InputStreamReader(is);
         BufferedReader br = new BufferedReader(isr);
