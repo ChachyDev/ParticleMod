@@ -23,9 +23,9 @@ public class ParticleModGui extends ParticleGuiScreen {
         // Create a button to toggle the Multiply without Critical option.
         this.buttonList.add(new GuiButton(3, this.getCenter() - 75, this.getRowPos(3), 150, 20, "Always Multiply: " + getSuffix(config.isMultiplyWithoutCrits())));
         // Create a button to toggle the Multiply on Animals option.
-        this.buttonList.add(new GuiButton(4, this.getCenter() - 75, this.getRowPos(4), 150, 20, "Multiply on Animals: " + getSuffix(config.isMultiplyOnAnimals())));
+        //this.buttonList.add(new GuiButton(4, this.getCenter() - 75, this.getRowPos(4), 150, 20, "Multiply on Animals: " + getSuffix(config.isMultiplyOnAnimals())));
         // Create a button to toggle the Update messages option.
-        this.buttonList.add(new GuiButton(5, this.getCenter() - 75, this.getRowPos(5), 150, 20, "Update Messages: " + getSuffix(config.showUpdateMessages())));
+        this.buttonList.add(new GuiButton(5, this.getCenter() - 75, this.getRowPos(4), 150, 20, "Update Messages: " + getSuffix(config.showUpdateMessages())));
     }
 
     @Override
@@ -51,11 +51,12 @@ public class ParticleModGui extends ParticleGuiScreen {
                 config.setMultiplyWithoutCrits(!config.isMultiplyWithoutCrits());
                 button.displayString = "Always Multiply: " + getSuffix(config.isMultiplyWithoutCrits());
                 break;
-            case 4:
+            /*case 4:
                 // Set the boolean to enabled/disabled and change the text.
                 config.setMultiplyOnAnimals(!config.isMultiplyOnAnimals());
                 button.displayString = "Multiply on Animals: " + getSuffix(config.isMultiplyOnAnimals());
                 break;
+                */
             case 5:
                 // Set the boolean to enabled/disabled and change the text.
                 config.setUpdateMessages(!config.showUpdateMessages());

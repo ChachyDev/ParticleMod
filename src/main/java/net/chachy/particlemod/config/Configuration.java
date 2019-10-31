@@ -24,8 +24,9 @@ public class Configuration {
 
 
     // Create a boolean for enabling/disabling the "Multiply On Animals" option.
-    @ConfigOpt
+  /*  @ConfigOpt
     private boolean MULITPLY_ON_ANIMALS = false;
+   */
 
     // Create a boolean for enabling/disabling the "Multiply without Critical Hits" option.
     @ConfigOpt
@@ -69,7 +70,7 @@ public class Configuration {
     public void setUpdateMessages(boolean update) {
         this.UPDATE_MESSAGES = update;
     }
-
+/*
     // Create a getter for the MULTIPLY_ON_ANIMALS variable since it's private.
     public boolean isMultiplyOnAnimals() {
         return MULITPLY_ON_ANIMALS;
@@ -79,4 +80,5 @@ public class Configuration {
     public void setMultiplyOnAnimals(boolean b) {
         this.MULITPLY_ON_ANIMALS = b;
     }
+*/
 }
