@@ -2,17 +2,17 @@ package net.chachy.particlemod;
 
 import cc.hyperium.Hyperium;
 import cc.hyperium.event.EventBus;
-import cc.hyperium.event.InitializationEvent;
 import cc.hyperium.event.InvokeEvent;
+import cc.hyperium.event.client.InitializationEvent;
 import cc.hyperium.internal.addons.IAddon;
-import net.chachy.utils.utils.DevUtils;
+import net.chachy.particlemod.utils.utils.DevUtils;
 import net.chachy.particlemod.command.ParticleGuiCommand;
 import net.chachy.particlemod.config.Configuration;
 import net.chachy.particlemod.handlers.ParticleHandlers;
 import net.chachy.particlemod.handlers.handler.particle.ParticleHandler;
 import net.chachy.particlemod.handlers.handler.update.UpdateHandler;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class ParticleMod implements IAddon {
     /**

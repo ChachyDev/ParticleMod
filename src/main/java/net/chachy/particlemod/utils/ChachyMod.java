@@ -1,13 +1,12 @@
-package net.chachy.utils;
+package net.chachy.particlemod.utils;
 
 import com.google.gson.JsonParser;
-import net.chachy.utils.http.HttpUtils;
-import net.chachy.utils.utils.DevUtils;
-import net.chachy.utils.utils.Mod;
+import net.chachy.particlemod.utils.http.HttpUtils;
+import net.chachy.particlemod.utils.utils.DevUtils;
+import net.chachy.particlemod.utils.utils.Mod;
 import net.chachy.particlemod.ParticleMod;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class ChachyMod {
     private String API_URL = "https://api.chachy.co.uk";

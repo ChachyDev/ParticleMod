@@ -1,4 +1,4 @@
-package net.chachy.utils.utils;
+package net.chachy.particlemod.utils.utils;
 
 public interface Mod {
     String getModName();

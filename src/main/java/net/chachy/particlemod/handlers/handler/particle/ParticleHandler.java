@@ -1,7 +1,7 @@
 package net.chachy.particlemod.handlers.handler.particle;
 
 import cc.hyperium.event.InvokeEvent;
-import cc.hyperium.event.PlayerAttackEntityEvent;
+import cc.hyperium.event.entity.PlayerAttackEntityEvent;
 import net.chachy.particlemod.config.Configuration;
 import net.chachy.particlemod.handlers.utils.Handler;
 import net.minecraft.client.Minecraft;

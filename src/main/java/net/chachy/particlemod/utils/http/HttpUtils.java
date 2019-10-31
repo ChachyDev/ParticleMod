@@ -1,4 +1,4 @@
-package net.chachy.utils.http;
+package net.chachy.particlemod.utils.http;
 
 import net.chachy.particlemod.ParticleMod;
 

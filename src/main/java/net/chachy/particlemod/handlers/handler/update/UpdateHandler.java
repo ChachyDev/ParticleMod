@@ -1,10 +1,10 @@
 package net.chachy.particlemod.handlers.handler.update;
 
 import cc.hyperium.Hyperium;
-import cc.hyperium.event.EntityJoinWorldEvent;
 import cc.hyperium.event.InvokeEvent;
-import cc.hyperium.event.ServerJoinEvent;
-import net.chachy.utils.ChachyMod;
+import cc.hyperium.event.network.server.ServerJoinEvent;
+import cc.hyperium.event.world.EntityJoinWorldEvent;
+import net.chachy.particlemod.utils.ChachyMod;
 import net.chachy.particlemod.ParticleMod;
 import net.chachy.particlemod.config.Configuration;
 import net.chachy.particlemod.handlers.utils.Handler;
