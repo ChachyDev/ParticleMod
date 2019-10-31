@@ -14,18 +14,18 @@ public class ChachyMod {
 
     public final boolean isLatestVersion(String mod, String version) {
         if (DevUtils.INSTANCE.isMinecraftDevelopmentEnvironment()) return true;
-        return (Integer.parseInt(getVersion(mod)) < Integer.parseInt(version)) || getVersion(mod).equalsIgnoreCase(ParticleMod.INSTANCE.VERSION);
+        return (Float.parseFloat(getVersion(mod)) < Float.parseFloat(version)) || getVersion(mod).equalsIgnoreCase(ParticleMod.INSTANCE.VERSION);
     }
 
     public final boolean isLatestVersion(Mod mod, String version) {
         if (DevUtils.INSTANCE.isMinecraftDevelopmentEnvironment()) return true;
-        return (Integer.parseInt(getVersion(mod)) < Integer.parseInt(version)) || getVersion(mod).equalsIgnoreCase(ParticleMod.INSTANCE.VERSION);
+        return (Float.parseFloat(getVersion(mod)) < Float.parseFloat(version)) || getVersion(mod).equalsIgnoreCase(ParticleMod.INSTANCE.VERSION);
     }
 
 
     public final String getVersion(Mod mod) {
         try {
-            return new JsonParser().parse(HttpUtils.get("https://api.chachy.co.uk/get/mod/" + mod.getModName())).getAsJsonObject().get("version").getAsString();
+            return new JsonParser().parse(HttpUtils.INSTANCE.get("https://api.chachy.co.uk/get/mod/" + mod.getModName())).getAsJsonObject().get("version").getAsString();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -34,7 +34,7 @@ public class ChachyMod {
 
     public final String getVersion(String endpoint, String mod) {
         try {
-            return new JsonParser().parse(HttpUtils.get(API_URL + endpoint + mod)).getAsJsonObject().get("version").getAsString();
+            return new JsonParser().parse(HttpUtils.INSTANCE.get(API_URL + endpoint + mod)).getAsJsonObject().get("version").getAsString();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -43,7 +43,7 @@ public class ChachyMod {
 
     private String getVersion(String mod) {
         try {
-            return new JsonParser().parse(HttpUtils.get("https://api.chachy.co.uk/get/mod/" + mod)).getAsJsonObject().get("version").getAsString();
+            return new JsonParser().parse(HttpUtils.INSTANCE.get("https://api.chachy.co.uk/get/mod/" + mod)).getAsJsonObject().get("version").getAsString();
         } catch (IOException e) {
             e.printStackTrace();
         }
