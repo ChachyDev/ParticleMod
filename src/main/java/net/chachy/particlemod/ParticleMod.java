@@ -66,6 +66,7 @@ public class ParticleMod implements IAddon {
         Hyperium.CONFIG.save();
         // Tell the logs the mod is shutting down
         LOGGER.info("Shutting down ParticleMod " + VERSION);
+        EventBus.INSTANCE.register(this);
     }
 
     public void sendDebugToConsole(String debug) {
