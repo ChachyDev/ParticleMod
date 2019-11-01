@@ -50,7 +50,7 @@ public class UpdateHandler implements Handler {
     @InvokeEvent
     public void onServerJoin(ServerJoinEvent event) {
         // Check if update messages are enabled and isn't the latest version.
-        if (Configuration.INSTANCE.showUpdateMessages()) {
+        if (Configuration.INSTANCE.showUpdateMessages() && !isLatestVersion) {
             // Run the update message method.
             sendUpdateMessage();
         }
@@ -60,7 +60,7 @@ public class UpdateHandler implements Handler {
     @InvokeEvent
     public void onSingleplayerJoin(SingleplayerJoinEvent event) {
         // Check if update messages are enabled and isn't the latest version.
-        if (Configuration.INSTANCE.showUpdateMessages()) {
+        if (Configuration.INSTANCE.showUpdateMessages() && !isLatestVersion) {
             // Run the update message method.
             sendUpdateMessage();
         }
