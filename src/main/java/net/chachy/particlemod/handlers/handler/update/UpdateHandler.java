@@ -28,42 +28,31 @@ public class UpdateHandler implements Handler {
     private final Mod mod = () -> "ParticleAddon";
     // Initialize a final boolean to check if the mod is at it's latest version.
     private final boolean isLatestVersion = ChachyMod.INSTANCE.isLatestVersion(mod, ParticleMod.INSTANCE.VERSION);
-    // Initialize a variable to get the version of the mod from my API.
-    private final String version = ChachyMod.INSTANCE.getVersion(mod);
 
     /**
-     * If the event {@link EntityJoinWorldEvent} is posted, it runs this method
+     * If the event {@link ServerJoinEvent} is posted, it runs this method
      *
      * @see cc.hyperium.event.EventBus
      */
-    @InvokeEvent
-    public void onWorldJoin(EntityJoinWorldEvent event) {
-        // Check if the entity joined is the player, the update messages option is enabled and isn't the latest version
-        if (event.getEntity() == Minecraft.getMinecraft().thePlayer && Configuration.INSTANCE.showUpdateMessages() && !isLatestVersion) {
-            // Run the update message method.
-            sendUpdateMessage();
-        }
-
-    }
 
     // Check if the user joins a server
     @InvokeEvent
     public void onServerJoin(ServerJoinEvent event) {
-        // Check if update messages are enabled and isn't the latest version.
-        if (Configuration.INSTANCE.showUpdateMessages() && !isLatestVersion) {
-            // Run the update message method.
-            sendUpdateMessage();
-        }
+        // Check if update messages are enabled and isn't the latest version run the update message method.
+        if (Configuration.INSTANCE.showUpdateMessages() && !isLatestVersion) sendUpdateMessage();
     }
+
+    /**
+     * If the event {@link SingleplayerJoinEvent} is posted, it runs this method
+     *
+     * @see cc.hyperium.event.EventBus
+     */
 
     // Check if the user joins a singleplayer world
     @InvokeEvent
     public void onSingleplayerJoin(SingleplayerJoinEvent event) {
-        // Check if update messages are enabled and isn't the latest version.
-        if (Configuration.INSTANCE.showUpdateMessages() && !isLatestVersion) {
-            // Run the update message method.
-            sendUpdateMessage();
-        }
+        // Check if update messages are enabled and isn't the latest version run the update message method.
+        if (Configuration.INSTANCE.showUpdateMessages() && !isLatestVersion) sendUpdateMessage();
     }
 
     private void sendUpdateMessage() {

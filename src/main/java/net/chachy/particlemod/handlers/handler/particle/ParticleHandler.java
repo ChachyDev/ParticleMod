@@ -38,8 +38,7 @@ public class ParticleHandler implements Handler {
             // Checks if enabled.
             if (Configuration.INSTANCE.isEnabled()) {
                 // Check if its a critical hit or the multiply without critical hits option is enabled run Minecraft#onCriticalHit(entity) to show the critical marks
-                if (critical || Configuration.INSTANCE.isMultiplyWithoutCrits())
-                    Minecraft.getMinecraft().thePlayer.onCriticalHit(entity);
+                if (critical || Configuration.INSTANCE.isMultiplyWithoutCrits()) Minecraft.getMinecraft().thePlayer.onCriticalHit(entity);
                 // Check if the enchantment float is over 0.0f run Minecraft#onEnchantmentCritical(entity) instead.
                 if (enchantment > 0.0f) Minecraft.getMinecraft().thePlayer.onEnchantmentCritical(entity);
             }
