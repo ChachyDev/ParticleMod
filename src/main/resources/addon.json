@@ -1,5 +1,6 @@
 {
   "name":"Particle Addon",
-  "version":"1.1",
-  "mainClass":"net.chachy.particlemod.ParticleMod"
+  "version":"1.2",
+  "mainClass":"net.chachy.particlemod.ParticleMod",
+  "versionCode": "1.2"
 }
