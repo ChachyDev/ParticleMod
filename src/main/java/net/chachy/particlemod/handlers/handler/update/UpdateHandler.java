@@ -3,18 +3,16 @@ package net.chachy.particlemod.handlers.handler.update;
 import cc.hyperium.Hyperium;
 import cc.hyperium.event.InvokeEvent;
 import cc.hyperium.event.network.server.ServerJoinEvent;
+import cc.hyperium.event.network.server.SingleplayerJoinEvent;
 import cc.hyperium.event.world.EntityJoinWorldEvent;
-import cc.hyperium.utils.ChatColor;
-import net.chachy.particlemod.utils.ChachyMod;
 import net.chachy.particlemod.ParticleMod;
 import net.chachy.particlemod.config.Configuration;
 import net.chachy.particlemod.handlers.utils.Handler;
+import net.chachy.particlemod.utils.ChachyMod;
 import net.chachy.particlemod.utils.utils.Mod;
 import net.minecraft.client.Minecraft;
-import net.minecraft.event.ClickEvent;
-import net.minecraft.event.HoverEvent;
-import net.minecraft.util.ChatComponentText;
-import net.minecraft.util.IChatComponent;
+
+import java.awt.*;
 
 public class UpdateHandler implements Handler {
     /**
@@ -41,33 +39,41 @@ public class UpdateHandler implements Handler {
     @InvokeEvent
     public void onWorldJoin(EntityJoinWorldEvent event) {
         // Check if the entity joined is the player, the update messages option is enabled and isn't the latest version
-        if (event.getEntity() == Minecraft.getMinecraft().thePlayer && Configuration.INSTANCE.showUpdateMessages() && !isLatestVersion)  {
+        if (event.getEntity() == Minecraft.getMinecraft().thePlayer && Configuration.INSTANCE.showUpdateMessages() && !isLatestVersion) {
             // Run the update message method.
             sendUpdateMessage();
         }
 
     }
 
+    // Check if the user joins a server
     @InvokeEvent
     public void onServerJoin(ServerJoinEvent event) {
         // Check if update messages are enabled and isn't the latest version.
-        if (Configuration.INSTANCE.showUpdateMessages() && !isLatestVersion) {
+        if (Configuration.INSTANCE.showUpdateMessages()) {
             // Run the update message method.
             sendUpdateMessage();
         }
+    }
 
+    // Check if the user joins a singleplayer world
+    @InvokeEvent
+    public void onSingleplayerJoin(SingleplayerJoinEvent event) {
+        // Check if update messages are enabled and isn't the latest version.
+        if (Configuration.INSTANCE.showUpdateMessages()) {
+            // Run the update message method.
+            sendUpdateMessage();
+        }
     }
 
     private void sendUpdateMessage() {
-        // Create a variable with the download link
-        String url = "https://chachy.co.uk/download/ParticleAddon-" + version + ".jar";
-        // Create a variable of the component so it becomes clickable.
-        IChatComponent urlComponent = new ChatComponentText(ChatColor.RED + "[ParticleMod] " + ChatColor.GRAY + "Download the latest version!");
-        // Add a the link when the text is clicked.
-        urlComponent.getChatStyle().setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, url));
-        /// Set the text when it gets hovered over.
-        urlComponent.getChatStyle().setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ChatComponentText(ChatColor.GRAY + "Download the newest version here!")));
-        // Send the message through the Hyperium ChatHandler.
-        Hyperium.INSTANCE.getHandlers().getGeneralChatHandler().sendMessage(urlComponent);
+        Hyperium.INSTANCE.getNotification().display(
+                "There is an update ready.",
+                "Particle Addon has an update. " +
+                        "Click to disable these notifications.",
+                5F,
+                null,
+                () -> Configuration.INSTANCE.setUpdateMessages(false),
+                new Color(128, 226, 126));
     }
 }
