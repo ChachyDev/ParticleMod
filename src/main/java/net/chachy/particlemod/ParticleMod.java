@@ -5,23 +5,22 @@ import cc.hyperium.event.EventBus;
 import cc.hyperium.event.InvokeEvent;
 import cc.hyperium.event.client.InitializationEvent;
 import cc.hyperium.internal.addons.IAddon;
-import net.chachy.particlemod.utils.utils.DevUtils;
 import net.chachy.particlemod.command.ParticleGuiCommand;
 import net.chachy.particlemod.config.Configuration;
 import net.chachy.particlemod.handlers.ParticleHandlers;
 import net.chachy.particlemod.handlers.handler.particle.ParticleHandler;
 import net.chachy.particlemod.handlers.handler.update.UpdateHandler;
+import net.chachy.particlemod.utils.utils.DevUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+/**
+ * The Particle Mod Main class.
+ *
+ * @author chachy
+ * @see cc.hyperium.internal.addons.IAddon
+ */
 public class ParticleMod implements IAddon {
-    /**
-     * The Particle Mod Main class.
-     *
-     * @author chachy
-     *
-     * @see cc.hyperium.internal.addons.IAddon
-     */
 
     // Create an instance of this class for non-static methods.
     public static ParticleMod INSTANCE = new ParticleMod();
