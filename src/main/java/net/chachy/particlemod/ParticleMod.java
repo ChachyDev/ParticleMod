@@ -11,8 +11,8 @@ import net.chachy.particlemod.handlers.ParticleHandlers;
 import net.chachy.particlemod.handlers.handler.particle.ParticleHandler;
 import net.chachy.particlemod.handlers.handler.update.UpdateHandler;
 import net.chachy.particlemod.utils.utils.DevUtils;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * The Particle Mod Main class.
@@ -31,7 +31,7 @@ public class ParticleMod implements IAddon {
      * @see LogManager
      */
 
-    public static Logger LOGGER = LogManager.getLogger("ParticleAddon");
+    private static Logger LOGGER = LogManager.getLogger("ParticleAddon");
 
     /**
      * Create a version variable (used for {@link net.chachy.particlemod.handlers.handler.update.UpdateHandler})
