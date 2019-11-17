@@ -37,7 +37,7 @@ public class ParticleMod implements IAddon {
      * Create a version variable (used for {@link net.chachy.particlemod.handlers.handler.update.UpdateHandler})
      */
 
-    public final String VERSION = "1.2";
+    public final String VERSION = "1.3";
 
     @Override
     public void onLoad() {

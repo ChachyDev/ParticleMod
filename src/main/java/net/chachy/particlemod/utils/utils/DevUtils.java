@@ -6,9 +6,7 @@ public class DevUtils {
     public boolean isMinecraftDevelopmentEnvironment() {
         try {
             return Class.forName("net.minecraft.client.Minecraft") != null;
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        } catch (ClassNotFoundException ignored) { }
         return false;
     }
 }
