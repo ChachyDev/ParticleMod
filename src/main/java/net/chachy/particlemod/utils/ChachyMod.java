@@ -13,16 +13,16 @@ public class ChachyMod {
 
     public final boolean isLatestVersion(String mod, String version) {
         if (DevUtils.INSTANCE.isMinecraftDevelopmentEnvironment()) return true;
-        return (Float.parseFloat(getVersion(mod)) < Float.parseFloat(version)) || getVersion(mod).equalsIgnoreCase(ParticleMod.INSTANCE.VERSION);
+        return (Float.parseFloat(getVersion(mod)) < Float.parseFloat(version)) || getVersion(mod).equalsIgnoreCase(version);
     }
 
     public final boolean isLatestVersion(Mod mod, String version) {
         if (DevUtils.INSTANCE.isMinecraftDevelopmentEnvironment()) return true;
-        return (Float.parseFloat(getVersion(mod)) < Float.parseFloat(version)) || getVersion(mod).equalsIgnoreCase(ParticleMod.INSTANCE.VERSION);
+        return (Float.parseFloat(getVersion(mod)) < Float.parseFloat(version)) || getVersion(mod).equalsIgnoreCase(version);
     }
 
 
-    public final String getVersion(Mod mod) {
+    private String getVersion(Mod mod) {
         final Request request = new Request.Builder("https://api.chachy.co.uk/get/mod/" + mod.getModName(), MethodType.GET).build();
         try {
             return new JsonParser().parse(request.getResponse()).getAsJsonObject().get("version").getAsString();
@@ -42,7 +42,7 @@ public class ChachyMod {
         return ParticleMod.INSTANCE.VERSION;
     }
 
-    public final String getVersion(String mod) {
+    private String getVersion(String mod) {
         final Request request = new Request.Builder("https://api.chachy.co.uk/get/mod/" + mod, MethodType.GET).build();
         try {
             return new JsonParser().parse(request.getResponse()).getAsJsonObject().get("version").getAsString();
