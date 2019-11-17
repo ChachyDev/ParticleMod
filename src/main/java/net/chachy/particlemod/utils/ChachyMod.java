@@ -42,7 +42,7 @@ public class ChachyMod {
         return ParticleMod.INSTANCE.VERSION;
     }
 
-    private final String getVersion(String mod) {
+    public final String getVersion(String mod) {
         final Request request = new Request.Builder("https://api.chachy.co.uk/get/mod/" + mod, MethodType.GET).build();
         try {
             return new JsonParser().parse(request.getResponse()).getAsJsonObject().get("version").getAsString();

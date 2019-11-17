@@ -6,7 +6,8 @@ import net.minecraft.util.EnumChatFormatting;
 public abstract class ParticleGuiScreen extends GuiScreen {
 
     /**
-     * {@author asbyth} To make Gui's more fun (:
+     * @author asbyth
+     * @reason To make Gui's more fun (:
      */
 
     // Create a getter to get the center

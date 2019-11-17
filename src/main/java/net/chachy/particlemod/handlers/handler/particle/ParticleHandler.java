@@ -28,7 +28,7 @@ public class ParticleHandler implements Handler {
         // Create a variable for Minecraft#thePlayer
         EntityPlayer player = Minecraft.getMinecraft().thePlayer;
         // Check if the player is null, multiplier is 1 or Configuration#isMultiplyOnAnimals() is false.
-        if (player == null || multiplier == 1 /*|| !Configuration.INSTANCE.isMultiplyOnAnimals()*/) return;
+        if (player == null || multiplier == 1 || !Configuration.INSTANCE.isMultiplyOnAnimals()) return;
         // Check if the attack was critical.
         boolean critical = player.fallDistance > 0.0f && !player.onGround && !player.isOnLadder() && !player.isInWater() && !player.isPotionActive(Potion.blindness) && player.ridingEntity == null;
         // Create a float to get the EMD (Enchantment Modifier Damage).
