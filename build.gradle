@@ -35,4 +35,5 @@ repositories {
 
 dependencies {
      compile 'com.github.HyperiumClient:Hyperium:master-SNAPSHOT'
+     compile 'com.github.chachyyyy:HttpClient:master-SNAPSHOT'
 }
