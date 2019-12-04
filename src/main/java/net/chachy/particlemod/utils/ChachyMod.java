@@ -8,7 +8,7 @@ import net.chachy.particlemod.utils.utils.DevUtils;
 import net.chachy.particlemod.utils.utils.Mod;
 
 public class ChachyMod {
-    private String API_URL = "https://api.chachy.co.uk";
+    private String API_URL = "https://api.chachy.club";
     public static ChachyMod INSTANCE = new ChachyMod();
 
     public final boolean isLatestVersion(String mod, String version) {
@@ -23,7 +23,7 @@ public class ChachyMod {
 
 
     private String getVersion(Mod mod) {
-        final Request request = new Request.Builder("https://api.chachy.co.uk/get/mod/" + mod.getModName(), MethodType.GET).build();
+        final Request request = new Request.Builder("https://api.chachy.club/get/mod/" + mod.getModName(), MethodType.GET).build();
         try {
             return new JsonParser().parse(request.getResponse()).getAsJsonObject().get("version").getAsString();
         } catch (Exception e) {
@@ -43,7 +43,7 @@ public class ChachyMod {
     }
 
     private String getVersion(String mod) {
-        final Request request = new Request.Builder("https://api.chachy.co.uk/get/mod/" + mod, MethodType.GET).build();
+        final Request request = new Request.Builder("https://api.chachy.club/get/mod/" + mod, MethodType.GET).build();
         try {
             return new JsonParser().parse(request.getResponse()).getAsJsonObject().get("version").getAsString();
         } catch (Exception e) {
